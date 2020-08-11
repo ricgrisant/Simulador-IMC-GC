@@ -33,6 +33,7 @@ class Formulario extends Component {
 
           // e.currentTarget.reset() 
      }
+  
 
      render() {
           return (
@@ -49,34 +50,35 @@ class Formulario extends Component {
 
                   <div className="campo">
                     <label>Estatura (cm): </label>
-                    <input id="estatura" onChange={this.handleFormulario}></input>
+                    <input type="number" id="estatura" onChange={this.handleFormulario}></input>
                   </div>
 
                   <div className="campo">
                     <label>Peso (kg): </label>
-                    <input id="peso" onChange={this.handleFormulario}></input>
+                    <input type="number" id="peso" onChange={this.handleFormulario}></input>
                   </div>
 
                   <div className="campo">
-                    <label>Circunferencia Cintura: </label>
-                    <input id="cirCintura" onChange={this.handleFormulario}></input>
+                    <label>Circunferencia Cintura (cm): </label>
+                    <input type="number" id="cirCintura" onChange={this.handleFormulario}></input>
                   </div>
 
                   <div className="campo">
-                    <label>Circunferencia Cuello: </label>
-                    <input id="cirCuello" onChange={this.handleFormulario}></input>
+                    <label>Circunferencia Cuello (cm): </label>
+                    <input type="number" id="cirCuello" onChange={this.handleFormulario}></input>
                   </div>
 
-                  <div className="campo">
-                    <label>Circ. Cadera (Sólo Mujer): </label>
-                    <input id="cirCaderaMuj" onChange={this.handleFormulario}></input>
-                  </div>
-  
                   <div className="campo">
                       <label>Género:</label>
                       <input type="radio" id="generoMujer" onChange={this.handleFormulario}  name="plan" value="mujer"/> Mujer
                       <input type="radio" id="generoHombre" onChange={this.handleFormulario}  name="plan" value="hombre"/> Hombre
                   </div>
+
+                  {this.state.generoMujer ? (
+                    <div className="campo">
+                      <label>Circunferencia Cadera (cm): </label>
+                      <input type="number" id="cirCaderaMuj" onChange={this.handleFormulario}></input>
+                    </div>) : null}
   
                   <button type="submit" className="boton">Calcular</button>
               </form>
