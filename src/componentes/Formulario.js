@@ -2,11 +2,7 @@ import React, {Component} from 'react';
 
 class Formulario extends Component {
 
-
-    constructor(props) {
-      super(props)
-    
-      this.state = {
+  state = {
         nombrePersona : '', 
         idPersona : '',
         estatura : '', 
@@ -16,22 +12,19 @@ class Formulario extends Component {
         cirCaderaMuj : '',
         generoMujer : '',
         generoHombre : ''
-      }
     }
-
+    //función para hacer el manejo de lo que es ingresado en los inputs
     handleFormulario = (e) => {
       this.setState({
         [e.target.id] : e.target.value
       })
     }
 
+    //función que se dispara al enviar la información del formulario 
      handleSubmit = (e) =>  {
           e.preventDefault();
 
-          // leer el género
-          console.log(this.state);
-
-          // e.currentTarget.reset() 
+          this.props.addPersona(this.state);
      }
   
 
