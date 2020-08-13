@@ -2,18 +2,32 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
 import Resultado from './Resultado';
-import {obtenerDiferenciaAnio, calcularMarca, obtenerPlan} from '../helper';
+import {calcularIMC, calcularGC} from '../helper';
 
 
 class App extends Component {
 
   state = {
-    personas: [
-      {nombrePersona: "monica", idPersona: "12345", estatura: "1", peso: "2", cirCintura: "3"}
-    ]
+    resultadoGrasaCorp: 25,
+    personas:{}
   }
 
   addPersona = (persona) => {
+    //calculamos el imc y lo agregamos a persona
+    persona.imc = calcularIMC(persona.estatura,persona.peso);
+
+     //calculamos el %gc y lo agregamos a persona
+      //calculamos el imc y lo agregamos a persona
+    persona.grasaCorporal = calcularGC(persona.cirCuello,
+      persona.cirCintura,
+      persona.cirCaderaMuj,
+      persona.estatura,
+      persona.generoMujer);
+      
+    //Agregamos el valor del resultado actual
+    this.setState({
+      resultadoGrasaCorp : persona.grasaCorporal
+    })
     //spread operator para no modificar el state directamente
     let pers = [...this.state.personas,persona]
     //asignarle al state personas el nuevo arreglo (se modifica
@@ -21,6 +35,8 @@ class App extends Component {
     this.setState({
       personas: pers
     })
+
+    console.log(persona)
   }
 
   render() {
@@ -31,7 +47,8 @@ class App extends Component {
         />
         <div className="contenedor-formulario">
           <Formulario addPersona={this.addPersona}/>
-          <Resultado/>
+          <Resultado resultado={this.state.resultadoGrasaCorp}/>
+          {console.log(this.state.resultadoGrasaCorp)}
         </div>
       </div>
     );

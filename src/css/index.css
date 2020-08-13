@@ -43,7 +43,18 @@ header h1 {
   padding: 3rem;
 }
 
-.campo {
+.random
+{
+  width: 193px;
+  background-color: rgb(50, 167, 0);
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+}
+
+.campo{
   display: flex;
   margin-bottom: 1rem;
   align-items: center;
