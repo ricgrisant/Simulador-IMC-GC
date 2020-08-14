@@ -8,8 +8,12 @@ import {calcularIMC, calcularGC} from '../helper';
 class App extends Component {
 
   state = {
-    resultadoGrasaCorp: 25,
+    resultadoGrasaCorp: '',
     personas:{}
+  }
+
+  componentDidMount() {
+    console.log("Esta listo")
   }
 
   addPersona = (persona) => {
@@ -36,7 +40,8 @@ class App extends Component {
       personas: pers
     })
 
-    console.log(persona)
+    console.log(this.state)
+    console.log(this.state.personas)
   }
 
   render() {
@@ -48,7 +53,6 @@ class App extends Component {
         <div className="contenedor-formulario">
           <Formulario addPersona={this.addPersona}/>
           <Resultado resultado={this.state.resultadoGrasaCorp}/>
-          {console.log(this.state.resultadoGrasaCorp)}
         </div>
       </div>
     );

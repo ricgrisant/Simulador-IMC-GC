@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 class Formulario extends Component {
 
   state = {
+        error : false,
         nombrePersona : '', 
         idPersona : '',
         estatura : '', 
@@ -15,14 +16,14 @@ class Formulario extends Component {
     }
     //función para hacer el manejo de lo que es ingresado en los inputs
     handleFormulario = (e) => {
-      this.setState({
-        [e.target.id] : e.target.value
-      })
-    }
+            this.setState({
+            [e.target.id] : e.target.value
+        })
+      }
 
     //LLenado de forma aleatoria
     handleAleatorio= (e) => {
-      var randBool = Math.random() >= 0.1
+      var randBool = Math.random() >= 0.5
       this.setState({
         nombrePersona : Math.random().toString(36).substring(9), 
         idPersona : Math.floor(Math.random() * 100000000),
@@ -39,11 +40,23 @@ class Formulario extends Component {
      handleSubmit = (e) =>  {
           e.preventDefault();
           //envía la info al app root
-          this.props.addPersona(this.state);
-          alert("Se ha auto llenado los campos con los siguientes datos: " + 
-          Object.keys(this.state).map((key) => "\n" + [key, this.state[key]] + "\n") )
-
+          if (!this.state.nombrePersona  ||
+          !this.state.idPersona  ||
+          !this.state.estatura  ||
+          !this.state.peso  ||
+          !this.state.cirCintura  ||
+          !this.state.cirCuello) {
+            alert("Llene todos los datos")
+          this.setState({
+            error : true
+          })
+  
+        } else {
+  
+        this.props.addPersona(this.state);
           //vaciamos el formulario al enviar los datos
+      }
+          
           e.target.reset();
      }
   
@@ -58,44 +71,44 @@ class Formulario extends Component {
 
                   <div className="campo">
                     <label>Nombre: </label>
-                    <input id="nombrePersona" onChange={this.handleFormulario}></input>
+                    <input defaultValue={this.state.nombrePersona} id="nombrePersona" onChange={this.handleFormulario}></input>
                   </div>
 
                   <div className="campo">
                     <label>ID Persona: </label>
-                    <input id="idPersona" onChange={this.handleFormulario}></input>
+                    <input defaultValue={this.state.idPersona} id="idPersona" onChange={this.handleFormulario}></input>
                   </div>
 
                   <div className="campo">
                     <label>Estatura (cm): </label>
-                    <input type="number" id="estatura" onChange={this.handleFormulario}></input>
+                    <input defaultValue={this.state.estatura} type="number" id="estatura" onChange={this.handleFormulario}></input>
                   </div>
 
                   <div className="campo">
                     <label>Peso (kg): </label>
-                    <input type="number" id="peso" onChange={this.handleFormulario}></input>
+                    <input defaultValue={this.state.peso} type="number" id="peso" onChange={this.handleFormulario}></input>
                   </div>
 
                   <div className="campo">
                     <label>Circunferencia Cintura (cm): </label>
-                    <input type="number" id="cirCintura" onChange={this.handleFormulario}></input>
+                    <input defaultValue={this.state.cirCintura} type="number" id="cirCintura" onChange={this.handleFormulario}></input>
                   </div>
 
                   <div className="campo">
                     <label>Circunferencia Cuello (cm): </label>
-                    <input type="number" id="cirCuello" onChange={this.handleFormulario}></input>
+                    <input defaultValue={this.state.cirCuello} type="number" id="cirCuello" onChange={this.handleFormulario}></input>
                   </div>
 
                   <div className="campo">
                       <label>Género:</label>
-                      <input type="radio" id="generoMujer" onChange={this.handleFormulario}  name="plan" value="mujer"/> Mujer
-                      <input type="radio" id="generoHombre" onChange={this.handleFormulario}  name="plan" value="hombre"/> Hombre
+                      <input checked={this.state.generoMujer} type="radio" id="generoMujer" onChange={this.handleFormulario}  name="plan" value="mujer"/> Mujer
+                      <input checked={this.state.generoHombre} type="radio" id="generoHombre" onChange={this.handleFormulario}  name="plan" value="hombre"/> Hombre
                   </div>
 
                   {this.state.generoMujer ? (
                     <div className="campo">
                       <label>Circunferencia Cadera (cm): </label>
-                      <input type="number" id="cirCaderaMuj" onChange={this.handleFormulario}></input>
+                      <input defaultValue={this.state.cirCaderaMuj} type="number" id="cirCaderaMuj" onChange={this.handleFormulario}></input>
                     </div>) : null}
   
                   <button type="submit" className="boton">Calcular</button>

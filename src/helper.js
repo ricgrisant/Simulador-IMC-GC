@@ -5,32 +5,32 @@
       return imc  
   }
 
+  //Función de ayuda para calcular el imc de hombre y de mujer según caso
   export function calcularGC(cuello,cintura,cadera,altura,mujer) {
       var resultado;
       if (mujer) {
           if(cadera){
             resultado = (495)/(1.29579-0.35004*(Math.log10(Number(cintura) + Number(cadera)-cuello))
             +0.22100*(Math.log10(altura)))-450
+            alert("Llego a mujer")
           } else {
             alert("Por favor introduzca la medida de su cadera")
-            return null
+            return false
           }   
-      }
-      else if (!cuello || !cintura || !altura){
-          alert("Error en datos, por favor verifique que todos los campos han sido llenados ") 
-          return null
-        }  
-      else {
-        resultado = (495)/(1.0324-0.19077*(Math.log10(cintura-cuello))
+      } else {
+        alert("Llego a hombre")
+        return (495)/(1.0324-0.19077*(Math.log10(cintura-cuello))
           +0.15456*(Math.log10(altura)))-450
+          
       }
+
 
       if (mujer && resultado<10) {
           alert("revise los datos, el mínimo de grasa para la supervivencia de una mujer es 10%")
-          return null
+          return false
       } else if(resultado<2){
         alert("revise los datos, el mínimo de grasa para la supervivencia de un hombre es 2%")
-        return null   
+        return false   
       }
       else{
           return resultado

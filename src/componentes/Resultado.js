@@ -4,9 +4,9 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group';
 class Resultado extends Component {
      render() {
           
-          const resultado = this.props.imc;
-          console.log(resultado)
-          const mensaje = (!resultado) ? 'LLene los datos de arriba y presione enviar' : 'Su índice de grasa corporal es:';
+          const resultado = this.props.resultado;
+          const mensaje = (resultado)? 'Su índice de grasa corporal es: ' 
+          : 'LLene los datos de arriba y presione enviar -----   ';
           return(
                <div className="gran-total">
                     {mensaje}
@@ -15,7 +15,8 @@ class Resultado extends Component {
                               classNames="resultado"
                                key={resultado} 
                                timeout={{enter: 500, exit: 500}} >
-                               <span>{resultado}</span>
+                               <span>{resultado? (parseFloat(resultado).toFixed(2) 
+                               + ' %'):("Sin datos o error")}</span>
                          </CSSTransition>
                     </TransitionGroup>
                </div>
