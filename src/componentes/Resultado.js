@@ -6,7 +6,7 @@ class Resultado extends Component {
           
           const resultado = this.props.resultado;
           const mensaje = (resultado)? 'Su índice de grasa corporal es: ' 
-          : 'LLene los datos de arriba y presione enviar -----   ';
+          : 'LLene los datos de arriba y presione calcular -----   ';
           return(
                <div className="gran-total">
                     {mensaje}
