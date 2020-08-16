@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
 import Resultado from './Resultado';
+import Chart from './Chart';
+import Nav from './Nav';
 import {calcularIMC, calcularGC} from '../helper';
 
 
@@ -47,12 +49,12 @@ class App extends Component {
   render() {
     return (
       <div className="contenedor">
-        <Header 
-          titulo = 'Simulador Grasa Corporal'
-        />
+        <Nav/>
+        <Header titulo = 'Simulador Grasa Corporal'/>
         <div className="contenedor-formulario">
           <Formulario addPersona={this.addPersona}/>
           <Resultado resultado={this.state.resultadoGrasaCorp}/>
+          <Chart/>
         </div>
       </div>
     );

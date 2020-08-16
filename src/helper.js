@@ -12,13 +12,11 @@
           if(cadera){
             resultado = (495)/(1.29579-0.35004*(Math.log10(Number(cintura) + Number(cadera)-cuello))
             +0.22100*(Math.log10(altura)))-450
-            alert("Llego a mujer")
           } else {
             alert("Por favor introduzca la medida de su cadera")
             return false
           }   
       } else {
-        alert("Llego a hombre")
         return (495)/(1.0324-0.19077*(Math.log10(cintura-cuello))
           +0.15456*(Math.log10(altura)))-450
           
