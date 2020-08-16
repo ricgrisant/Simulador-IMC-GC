@@ -5,8 +5,8 @@ export default function Nav() {
         <div>
             <nav className="navbar navbar-dark bg-dark">
                 <form className="form-inline">
-                    <button className="btn btn-outline-success btn-lg" type="button">Calculadora</button>
-                    <button type="button" className="btn btn-outline-primary btn-lg">Gráfica</button>
+                    <a className="btn btn-outline-success btn-lg" href="/formulario">Calculadora</a>
+                    <a className="btn btn-outline-primary btn-lg" href="/chart">Gráfica</a>
                 </form>
             </nav>
         </div>

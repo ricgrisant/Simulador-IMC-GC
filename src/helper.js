@@ -17,7 +17,7 @@
             return false
           }   
       } else {
-        return (495)/(1.0324-0.19077*(Math.log10(cintura-cuello))
+          resultado =  (495)/(1.0324-0.19077*(Math.log10(cintura-cuello))
           +0.15456*(Math.log10(altura)))-450
           
       }

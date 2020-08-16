@@ -5,6 +5,8 @@ import Resultado from './Resultado';
 import Chart from './Chart';
 import Nav from './Nav';
 import {calcularIMC, calcularGC} from '../helper';
+import { BrowserRouter, Route } from 'react-router-dom';
+
 
 
 class App extends Component {
@@ -48,15 +50,20 @@ class App extends Component {
 
   render() {
     return (
+      <BrowserRouter>
       <div className="contenedor">
         <Nav/>
         <Header titulo = 'Simulador Grasa Corporal'/>
+
         <div className="contenedor-formulario">
-          <Formulario addPersona={this.addPersona}/>
-          <Resultado resultado={this.state.resultadoGrasaCorp}/>
-          <Chart/>
+          <Route path='/formulario' component={() => <Formulario addPersona={this.addPersona}/>} />
+          <Route path='/chart' component={Chart} />
+          <Resultado resultado={this.state.resultadoGrasaCorp}/> 
         </div>
+        
       </div>
+      </BrowserRouter>
+      
     );
   }
 }

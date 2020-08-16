@@ -6,7 +6,7 @@ class Resultado extends Component {
           
           const resultado = this.props.resultado;
           const mensaje = (resultado)? 'Su índice de grasa corporal es: ' 
-          : 'LLene los datos de arriba y presione calcular -----   ';
+          : 'LLene los datos y presione calcular => ';
           return(
                <div className="gran-total">
                     {mensaje}
@@ -16,7 +16,7 @@ class Resultado extends Component {
                                key={resultado} 
                                timeout={{enter: 500, exit: 500}} >
                                <span>{resultado? (parseFloat(resultado).toFixed(2) 
-                               + ' %'):("Sin datos o error")}</span>
+                               + ' %'):("Resultado ")}</span>
                          </CSSTransition>
                     </TransitionGroup>
                </div>
