@@ -54,10 +54,9 @@ class App extends Component {
       <div className="contenedor">
         <Nav/>
         <Header titulo = 'Simulador Grasa Corporal'/>
-
+        <Route path='/chart' component={() => <Chart/>} />
         <div className="contenedor-formulario">
           <Route path='/formulario' component={() => <Formulario addPersona={this.addPersona}/>} />
-          <Route path='/chart' component={Chart} />
           <Resultado resultado={this.state.resultadoGrasaCorp}/> 
         </div>
         

@@ -8,13 +8,19 @@ function Chart() {
         datasets: [{
             //El titulo de la gráfica
             label: 'Proyección de grasa corporal (en Meses)',
+            backgroundColor: 'rgb(93, 188, 210)',
+            borderColor: 'rgb(239, 166, 71)',
             //los datos
             data: [25,20,22,18,16,15,14,13,12,11,10,9]
-        }]
-    }
+        }
+    ]}
+    
     return (
-        <Line data={datos}/>
+        <div className="grafica">
+            <Line data={datos}/>
+        </div>
     )
 }
+
 
 export default Chart

@@ -64,52 +64,90 @@ class Formulario extends Component {
      render() {
           return (
               <form className="cotizar-auto" onSubmit={this.handleSubmit} >
-                  <div className="campo">
-                    <label>Llenado Aleatorio: </label>
-                    <input className="random" type="button" value="Llenar Campos" onClick={this.handleAleatorio}></input>
-                  </div>    
-
-                  <div className="campo">
-                    <label>Nombre: </label>
-                    <input defaultValue={this.state.nombrePersona} id="nombrePersona" onChange={this.handleFormulario}></input>
+                  <div className="row campo">
+                    <div className="col">
+                      <label>Llenado Aleatorio: </label>
+                    </div>
+                    <div className="col">
+                      <input className="random" type="button" value="Llenar Campos" onClick={this.handleAleatorio}></input>
+                    </div> 
                   </div>
 
-                  <div className="campo">
-                    <label>ID Persona: </label>
-                    <input defaultValue={this.state.idPersona} id="idPersona" onChange={this.handleFormulario}></input>
+                  <div className="row campo">
+                    <div className="col">
+                      <label>Nombre: </label>
+                    </div>
+                    <div className="col">
+                      <input defaultValue={this.state.nombrePersona} id="nombrePersona" onChange={this.handleFormulario}></input>
+                    </div> 
                   </div>
 
-                  <div className="campo">
-                    <label>Estatura (cm): </label>
-                    <input defaultValue={this.state.estatura} type="number" id="estatura" onChange={this.handleFormulario}></input>
+                  <div className="row campo">
+                    <div className="col">
+                      <label>ID Persona: </label>
+                    </div>
+                    <div className="col">
+                      <input defaultValue={this.state.idPersona} id="idPersona" onChange={this.handleFormulario}></input>
+                    </div> 
                   </div>
 
-                  <div className="campo">
-                    <label>Peso (kg): </label>
-                    <input defaultValue={this.state.peso} type="number" id="peso" onChange={this.handleFormulario}></input>
+                  <div className="row campo">
+                    <div className="col">
+                      <label>Estatura (cm): </label>
+                    </div>
+                    <div className="col">
+                      <input defaultValue={this.state.estatura} type="number" id="estatura" onChange={this.handleFormulario}></input>
+                    </div> 
                   </div>
 
-                  <div className="campo">
-                    <label>Circunferencia Cintura (cm): </label>
-                    <input defaultValue={this.state.cirCintura} type="number" id="cirCintura" onChange={this.handleFormulario}></input>
+                  <div className="row campo">
+                    <div className="col">
+                      <label>Peso (kg):</label>
+                    </div>
+                    <div className="col">
+                      <input defaultValue={this.state.peso} type="number" id="peso" onChange={this.handleFormulario}></input>
+                    </div> 
                   </div>
 
-                  <div className="campo">
-                    <label>Circunferencia Cuello (cm): </label>
-                    <input defaultValue={this.state.cirCuello} type="number" id="cirCuello" onChange={this.handleFormulario}></input>
+                  <div className="row campo">
+                    <div className="col">
+                      <label>Cintura (cm): </label>
+                    </div>
+                    <div className="col">
+                      <input defaultValue={this.state.cirCintura} type="number" id="cirCintura" onChange={this.handleFormulario}></input>
+                    </div> 
                   </div>
 
-                  <div className="campo">
+                  <div className="row campo">
+                    <div className="col">
+                      <label>Cuello (cm): </label>
+                    </div>
+                    <div className="col">
+                      <input defaultValue={this.state.cirCuello} type="number" id="cirCuello" onChange={this.handleFormulario}></input>
+                    </div> 
+                  </div>
+
+                  <div className="row campo">
+                    <div className="col">
                       <label>Género:</label>
-                      <input checked={this.state.generoMujer} type="radio" id="generoMujer" onChange={this.handleFormulario}  name="plan" value="mujer"/> Mujer
-                      <input checked={this.state.generoHombre} type="radio" id="generoHombre" onChange={this.handleFormulario}  name="plan" value="hombre"/> Hombre
+                    </div>
+                    <div className="col">
+                      <input checked={this.state.generoMujer} type="radio" id="generoMujer" onChange={this.handleFormulario}  name="plan" value="mujer"/> Fem
+                    </div>
+                    <div className="col">
+                      <input checked={this.state.generoHombre} type="radio" id="generoHombre" onChange={this.handleFormulario}  name="plan" value="hombre"/> Mas
+                    </div>
                   </div>
-
+                  {/* Operador ternario que busca la condición de si es mujer o no para mostrar el imput de la cadera*/}
                   {this.state.generoMujer ? (
-                    <div className="campo">
-                      <label>Circunferencia Cadera (cm): </label>
-                      <input defaultValue={this.state.cirCaderaMuj} type="number" id="cirCaderaMuj" onChange={this.handleFormulario}></input>
-                    </div>) : null}
+                    <div className="row campo">
+                      <div className="col">
+                        <label>Circunferencia Cadera (cm): </label>
+                      </div>
+                      <div className="col">
+                        <input defaultValue={this.state.cirCaderaMuj} type="number" id="cirCaderaMuj" onChange={this.handleFormulario}></input>
+                      </div> 
+                  </div>) : null}
   
                   <button type="submit" className="boton">Calcular</button>
               </form>
