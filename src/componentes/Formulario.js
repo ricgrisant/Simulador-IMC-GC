@@ -128,14 +128,16 @@ class Formulario extends Component {
                   </div>
 
                   <div className="row campo">
-                    <div className="col">
+                    <div className="col-4">
                       <label>Género:</label>
                     </div>
-                    <div className="col">
-                      <input checked={this.state.generoMujer} type="radio" id="generoMujer" onChange={this.handleFormulario}  name="plan" value="mujer"/> Fem
+
+                    <div className="col-4">
+                      <input checked={this.state.generoMujer} type="radio" id="generoMujer" onChange={this.handleFormulario}  name="plan" value="mujer"/>Fem
                     </div>
-                    <div className="col">
-                      <input checked={this.state.generoHombre} type="radio" id="generoHombre" onChange={this.handleFormulario}  name="plan" value="hombre"/> Mas
+
+                    <div className="col-4">
+                      <input checked={this.state.generoHombre} type="radio" id="generoHombre" onChange={this.handleFormulario}  name="plan" value="hombre"/>Mas
                     </div>
                   </div>
                   {/* Operador ternario que busca la condición de si es mujer o no para mostrar el imput de la cadera*/}
