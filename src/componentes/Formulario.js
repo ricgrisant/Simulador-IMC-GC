@@ -3,16 +3,15 @@ import React, {Component} from 'react';
 class Formulario extends Component {
 
   state = {
-        error : false,
-        nombrePersona : '', 
-        idPersona : '',
-        estatura : '', 
-        peso : '',
-        cirCintura : '',
-        cirCuello : '',
-        cirCaderaMuj : '',
-        generoMujer : '',
-        generoHombre : ''
+    nombrePersona : '', 
+    idPersona : '',
+    estatura : '', 
+    peso : '',
+    cirCintura : '',
+    cirCuello : '',
+    cirCaderaMuj : '',
+    generoMujer : '',
+    generoHombre : ''
     }
     //función para hacer el manejo de lo que es ingresado en los inputs
     handleFormulario = (e) => {
@@ -47,17 +46,12 @@ class Formulario extends Component {
           !this.state.cirCintura  ||
           !this.state.cirCuello) {
             alert("Llene todos los datos")
-          this.setState({
-            error : true
-          })
-  
         } else {
   
-        this.props.addPersona(this.state);
+          this.props.addPersona(this.state);
           //vaciamos el formulario al enviar los datos
-      }
-          
           e.target.reset();
+      }
      }
   
 

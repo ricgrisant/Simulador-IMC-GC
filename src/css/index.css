@@ -33,16 +33,19 @@ input{
 }
 .boton {
   background-color: #28a745!important;
-    font-size: 16px;
-    width: 100%;
-    padding: 15px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 30px;
+  font-size: 16px;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 30px;
+  border-color: #343a4021;
+  border-width: thick;
 }
 .boton:hover {
   cursor: pointer;
+  background-color: #1e7e34 !important;
 }
 header {
   background-color: #1e7e34;

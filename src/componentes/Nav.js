@@ -8,8 +8,9 @@ export default function Nav() {
             <nav className="navbar navbar-dark bg-dark">
                 <form className="form-inline">
                     <NavLink className="btn btn-outline-success btn-lg" to="/formulario">Calculadora</NavLink>
-                    <NavLink className="btn btn-outline-primary btn-lg" to="/chart">Gráfica</NavLink>
-                </form>
+                    <a className="btn btn-outline-warning btn-lg" href="/chart">Gráfica</a>
+                    <NavLink className="btn btn-outline-warning btn-lg" to="/estUso">Estadísticas de uso</NavLink>
+                </form> 
             </nav>
         </div>
     )

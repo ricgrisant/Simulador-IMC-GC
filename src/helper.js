@@ -18,12 +18,13 @@
           }   
       } else {
           resultado =  (495)/(1.0324-0.19077*(Math.log10(cintura-cuello))
-          +0.15456*(Math.log10(altura)))-450
-          
-      }
+          +0.15456*(Math.log10(altura)))-450 }
 
+      if (isNaN(resultado)){
+        alert('revise sus datos, estos son erróneos')
+        return false
 
-      if (mujer && resultado<10) {
+      }else if (mujer && resultado<10) {
           alert("revise los datos, el mínimo de grasa para la supervivencia de una mujer es 10%")
           return false
       } else if(resultado<2){
@@ -33,4 +34,21 @@
       else{
           return resultado
       }
+  }
+
+  //Función para ver si ya se encuentra la persona en localstorage
+
+  export function existePersona(idPersona){
+    var personas= JSON.parse(window.localStorage.getItem('personas'));
+    var contador = 0;
+        if (personas) {
+            for (let i = 0; i < personas.length; i++) {
+                var pers = personas[i].idPersona;
+                if ( pers === idPersona || pers === Number(idPersona)){
+                    contador++
+                  }    
+            }
+        }
+
+    return contador
   }
