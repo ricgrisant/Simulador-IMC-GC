@@ -5,7 +5,7 @@ import Resultado from './Resultado';
 import Grafica from './Chart';
 import EstUso from './estUso';
 import Nav from './Nav';
-import {calcularIMC, calcularGC, existePersona} from '../helper';
+import {calcularIMC, calcularGC} from '../helper';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 

@@ -38,8 +38,7 @@
 
   //Función para ver si ya se encuentra la persona en localstorage
 
-  export function existePersona(idPersona){
-    var personas= JSON.parse(window.localStorage.getItem('personas'));
+  export function existePersona(personas,idPersona){
     var contador = 0;
         if (personas) {
             for (let i = 0; i < personas.length; i++) {
@@ -51,4 +50,17 @@
         }
 
     return contador
+  }
+
+  export function aparicionesPersona(personas,idPersona) {
+    var contador = 0;
+        if (personas) {
+            for (let i = 0; i < personas.length; i++) {
+                var pers = personas[i].idPersona;
+                if ( pers === idPersona || pers === Number(idPersona)){
+                    contador++
+                  }    
+            }
+            return contador
+        }
   }

@@ -15,11 +15,23 @@ const datos = {
     }
 ]}
 
+
 class Grafica extends Component{
+    state = {
+        opcion: ''
+    }
+
+    renderizar = (opcion) => {
+        this.setState({
+          opcion : opcion
+       })}
+
+       
     render(){
+        console.log(this.state);
         return(
             <div className="grafica">
-                <Seleccion/>
+                <Seleccion renderizar={this.renderizar}/>
                 <Line data={datos}/>
             </div>      
         )
