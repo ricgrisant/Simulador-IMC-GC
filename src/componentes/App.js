@@ -3,7 +3,6 @@ import Header from './Header';
 import Formulario from './Formulario';
 import Resultado from './Resultado';
 import Grafica from './Chart';
-import EstUso from './estUso';
 import Nav from './Nav';
 import {calcularIMC, calcularGC} from '../helper';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -17,11 +16,6 @@ class App extends Component {
     resultadoGrasaCorp: '',
     personas:{}
   }
-
-  componentDidMount() {
-    console.log("Esta listo");
-  }
-
   //Guardar los datos de las personas en el local storage y el contador
   componentDidUpdate() {
       localStorage.setItem(
@@ -35,8 +29,8 @@ class App extends Component {
 
   addPersona = (persona) => {
     this.setState({
-      contador : this.state.contador+1
-   });
+        contador : this.state.contador+1
+    });
     //calculamos el imc y lo agregamos a persona
     persona.imc = calcularIMC(persona.estatura,persona.peso);
 
@@ -53,6 +47,8 @@ class App extends Component {
     this.setState({
       resultadoGrasaCorp : persona.grasaCorporal
     })
+    //Agregamos un indice aleatorio
+    persona.indice = Math.floor(Math.random() * 200) 
     //spread operator para no modificar el state directamente
     let pers = [...this.state.personas,persona]
     //asignarle al state personas el nuevo arreglo (se modifica
@@ -61,9 +57,6 @@ class App extends Component {
       personas: pers
     })
   }
-
-    console.log(this.state)
-    console.log(this.state.personas)
   }
 
   render() {
@@ -73,7 +66,6 @@ class App extends Component {
         <Nav/>
         <Header titulo = 'Simulador Grasa Corporal'/>
         <Route path='/chart' component={() => <Grafica/>} />
-        <Route path='/estUso' component={() => <EstUso/>} />
         <div className="contenedor-formulario">
           <Route path='/formulario' component={() => <Formulario addPersona={this.addPersona}/>} />
           <Resultado resultado={this.state.resultadoGrasaCorp}/> 
@@ -81,7 +73,6 @@ class App extends Component {
         
       </div>
       </BrowserRouter>
-      
     );
   }
 }

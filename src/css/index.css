@@ -6,7 +6,6 @@ html {
 }
 body {
   background: #1d2124;  /* fallback for old browsers */
-  background: -webkit-gradient(linear, left top, right top, from(#1e7e34), to(#e96443));
   font-family: Arial, Helvetica, sans-serif;
 }
 input{
@@ -32,7 +31,7 @@ input{
   margin: 0 auto;
 }
 .boton {
-  background-color: #28a745!important;
+  background-color: blue ;
   font-size: 16px;
   width: 100%;
   padding: 15px;

@@ -15,13 +15,6 @@ if (personas) {
     }
 }
 
-//Sacar repetidos para el select
-var clean = persProyectables.filter((persProyectables, index, self) =>
-    index === self.findIndex((t) => (t.idPersona === persProyectables.idPersona)))
-
-console.log(clean);
-
-console.log(persProyectables);
 const porDefec = [
     { value: 'Sin datos', label: 'Sin datos que mostrar' }
     ];
