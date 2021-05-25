@@ -14,7 +14,7 @@ class App extends Component {
   state = {
     contador : 0,
     resultadoGrasaCorp: '',
-    personas:{}
+    personas:[]
   }
   //Guardar los datos de las personas en el local storage y el contador
   componentDidUpdate() {
@@ -50,11 +50,10 @@ class App extends Component {
     //Agregamos un indice aleatorio
     persona.indice = Math.floor(Math.random() * 200) 
     //spread operator para no modificar el state directamente
-    let pers = [...this.state.personas,persona]
     //asignarle al state personas el nuevo arreglo (se modifica
     //anteriormente el arreglo y se asigna de nuevo ya modificado)
     this.setState({
-      personas: pers
+      personas: [...(this.state.personas || []), persona]
     })
   }
   }
