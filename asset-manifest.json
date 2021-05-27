@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Simulador-IMC-GC/static/css/main.c584cf64.chunk.css",
-    "main.js": "/Simulador-IMC-GC/static/js/main.26482ef3.chunk.js",
-    "main.js.map": "/Simulador-IMC-GC/static/js/main.26482ef3.chunk.js.map",
+    "main.js": "/Simulador-IMC-GC/static/js/main.e0992c9c.chunk.js",
+    "main.js.map": "/Simulador-IMC-GC/static/js/main.e0992c9c.chunk.js.map",
     "runtime-main.js": "/Simulador-IMC-GC/static/js/runtime-main.a6fa0ff2.js",
     "runtime-main.js.map": "/Simulador-IMC-GC/static/js/runtime-main.a6fa0ff2.js.map",
     "static/js/2.d9155250.chunk.js": "/Simulador-IMC-GC/static/js/2.d9155250.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.a6fa0ff2.js",
     "static/js/2.d9155250.chunk.js",
     "static/css/main.c584cf64.chunk.css",
-    "static/js/main.26482ef3.chunk.js"
+    "static/js/main.e0992c9c.chunk.js"
   ]
 }
