@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Simulador-IMC-GC/static/css/main.c584cf64.chunk.css",
+    "main.css": "/Simulador-IMC-GC/static/css/main.1e10042f.chunk.css",
     "main.js": "/Simulador-IMC-GC/static/js/main.75e9ab1d.chunk.js",
     "main.js.map": "/Simulador-IMC-GC/static/js/main.75e9ab1d.chunk.js.map",
     "runtime-main.js": "/Simulador-IMC-GC/static/js/runtime-main.a6fa0ff2.js",
@@ -8,14 +8,14 @@
     "static/js/2.2d9268b0.chunk.js": "/Simulador-IMC-GC/static/js/2.2d9268b0.chunk.js",
     "static/js/2.2d9268b0.chunk.js.map": "/Simulador-IMC-GC/static/js/2.2d9268b0.chunk.js.map",
     "index.html": "/Simulador-IMC-GC/index.html",
-    "static/css/main.c584cf64.chunk.css.map": "/Simulador-IMC-GC/static/css/main.c584cf64.chunk.css.map",
+    "static/css/main.1e10042f.chunk.css.map": "/Simulador-IMC-GC/static/css/main.1e10042f.chunk.css.map",
     "static/js/2.2d9268b0.chunk.js.LICENSE.txt": "/Simulador-IMC-GC/static/js/2.2d9268b0.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Simulador-IMC-GC/static/media/background.c48d2529.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a6fa0ff2.js",
     "static/js/2.2d9268b0.chunk.js",
-    "static/css/main.c584cf64.chunk.css",
+    "static/css/main.1e10042f.chunk.css",
     "static/js/main.75e9ab1d.chunk.js"
   ]
 }
