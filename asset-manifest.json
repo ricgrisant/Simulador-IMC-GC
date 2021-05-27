@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/Simulador-IMC-GC/static/css/main.c584cf64.chunk.css",
-    "main.js": "/Simulador-IMC-GC/static/js/main.ee66dc14.chunk.js",
-    "main.js.map": "/Simulador-IMC-GC/static/js/main.ee66dc14.chunk.js.map",
+    "main.js": "/Simulador-IMC-GC/static/js/main.0af89d70.chunk.js",
+    "main.js.map": "/Simulador-IMC-GC/static/js/main.0af89d70.chunk.js.map",
     "runtime-main.js": "/Simulador-IMC-GC/static/js/runtime-main.a6fa0ff2.js",
     "runtime-main.js.map": "/Simulador-IMC-GC/static/js/runtime-main.a6fa0ff2.js.map",
-    "static/js/2.67454fdc.chunk.js": "/Simulador-IMC-GC/static/js/2.67454fdc.chunk.js",
-    "static/js/2.67454fdc.chunk.js.map": "/Simulador-IMC-GC/static/js/2.67454fdc.chunk.js.map",
+    "static/js/2.432635ac.chunk.js": "/Simulador-IMC-GC/static/js/2.432635ac.chunk.js",
+    "static/js/2.432635ac.chunk.js.map": "/Simulador-IMC-GC/static/js/2.432635ac.chunk.js.map",
     "index.html": "/Simulador-IMC-GC/index.html",
     "static/css/main.c584cf64.chunk.css.map": "/Simulador-IMC-GC/static/css/main.c584cf64.chunk.css.map",
-    "static/js/2.67454fdc.chunk.js.LICENSE.txt": "/Simulador-IMC-GC/static/js/2.67454fdc.chunk.js.LICENSE.txt",
+    "static/js/2.432635ac.chunk.js.LICENSE.txt": "/Simulador-IMC-GC/static/js/2.432635ac.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Simulador-IMC-GC/static/media/background.c48d2529.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.a6fa0ff2.js",
-    "static/js/2.67454fdc.chunk.js",
+    "static/js/2.432635ac.chunk.js",
     "static/css/main.c584cf64.chunk.css",
-    "static/js/main.ee66dc14.chunk.js"
+    "static/js/main.0af89d70.chunk.js"
   ]
 }
